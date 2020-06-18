@@ -14,7 +14,7 @@ namespace R5T.Pictia.Frisia
         /// Adds the <see cref="FrisiaSftpClientWrapperProvider"/> implementation of <see cref="ISftpClientWrapperProvider"/> as a <see cref="ServiceLifetime.Singleton"/>.
         /// </summary>
         public static IServiceCollection AddFrisiaSftpClientWrapperProvider(this IServiceCollection services,
-            ServiceAction<IAwsEc2ServerSecretsProvider> addAwsEc2ServerSecretsProvider)
+            IServiceAction<IAwsEc2ServerSecretsProvider> addAwsEc2ServerSecretsProvider)
         {
             services
                 .AddSingleton<ISftpClientWrapperProvider, FrisiaSftpClientWrapperProvider>()
@@ -27,8 +27,8 @@ namespace R5T.Pictia.Frisia
         /// <summary>
         /// Adds the <see cref="FrisiaSftpClientWrapperProvider"/> implementation of <see cref="ISftpClientWrapperProvider"/> as a <see cref="ServiceLifetime.Singleton"/>.
         /// </summary>
-        public static ServiceAction<ISftpClientWrapperProvider> AddFrisiaSftpClientWrapperProviderAction(this IServiceCollection services,
-            ServiceAction<IAwsEc2ServerSecretsProvider> addAwsEc2ServerSecretsProvider)
+        public static IServiceAction<ISftpClientWrapperProvider> AddFrisiaSftpClientWrapperProviderAction(this IServiceCollection services,
+            IServiceAction<IAwsEc2ServerSecretsProvider> addAwsEc2ServerSecretsProvider)
         {
             var serviceAction = new ServiceAction<ISftpClientWrapperProvider>(() => services.AddFrisiaSftpClientWrapperProvider(
                 addAwsEc2ServerSecretsProvider));
