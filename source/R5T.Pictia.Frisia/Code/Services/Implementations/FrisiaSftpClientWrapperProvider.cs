@@ -3,10 +3,13 @@
 using R5T.Frisia;
 using R5T.Pictia.Frisia.Extensions;
 
+using R5T.T0064;
+
 
 namespace R5T.Pictia.Frisia
 {
-    public class FrisiaSftpClientWrapperProvider : ISftpClientWrapperProvider
+    [ServiceImplementationMarker]
+    public class FrisiaSftpClientWrapperProvider : ISftpClientWrapperProvider, IServiceImplementation
     {
         public IAwsEc2ServerSecretsProvider AwsEc2ServerSecretsProvider { get; }
 
