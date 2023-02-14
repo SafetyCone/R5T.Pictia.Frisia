@@ -41,21 +41,21 @@ namespace R5T.Pictia.Frisia.Construction
                 .AddSingleton<ISftpClientWrapperProvider, FrisiaSftpClientWrapperProvider>()
                 .AddSingleton<IAwsEc2ServerSecretsProvider, SuebiaAwsEc2ServerSecretsProvider>()
                 .AddSingleton<IAwsEc2ServerSecretsFileNameProvider, HardCodedAwsEc2ServerSecretsFileNameProvider>()
-                .AddSingleton<ISecretsFilePathProvider, AlamaniaSecretsFilePathProvider>()
+                //.AddSingleton<ISecretsDirectoryFilePathProvider, AlamaniaSecretsFilePathProvider>()
                 .AddSingleton<IJsonFileSerializationOperator, NewtonsoftJsonFileSerializationOperator>()
                 .AddSingleton<IAwsEc2ServerHostFriendlyNameProvider>((serviceProviderInstance) =>
                 {
                     var output = new InstanceAwsEc2ServerHostFriendlyNameProvider("TempTest");
                     return output;
                 })
-                .AddSingleton<ISecretsDirectoryPathProvider, AlamaniaSecretsDirectoryPathProvider>()
-                .AddSingleton<IStringlyTypedPathOperator, StringlyTypedPathOperator>()
-                .AddSingleton<IRivetOrganizationDirectoryPathProvider, BulgariaRivetOrganizationDirectoryPathProvider>()
-                .AddSingleton<IDropboxDirectoryPathProvider, DefaultLocalDropboxDirectoryPathProvider>()
-                .AddSingleton<IOrganizationStringlyTypedPathOperator, DefaultOrganizationStringlyTypedPathOperator>()
-                .AddSingleton<IUserProfileDirectoryPathProvider, DefaultLocalUserProfileDirectoryPathProvider>()
-                .AddSingleton<IOrganizationsStringlyTypedPathOperator, DefaultOrganizationsStringlyTypedPathOperator>()
-                .AddSingleton<IOrganizationDirectoryNameProvider, DefaultOrganizationDirectoryNameProvider>()
+                //.AddSingleton<ISecretsDirectoryPathProvider, AlamaniaSecretsDirectoryPathProvider>()
+                //.AddSingleton<IStringlyTypedPathOperator, StringlyTypedPathOperator>()
+                //.AddSingleton<IRivetOrganizationDirectoryPathProvider, BulgariaRivetOrganizationDirectoryPathProvider>()
+                //.AddSingleton<IDropboxDirectoryPathProvider, DefaultLocalDropboxDirectoryPathProvider>()
+                //.AddSingleton<IOrganizationStringlyTypedPathOperator, DefaultOrganizationStringlyTypedPathOperator>()
+                //.AddSingleton<IUserProfileDirectoryPathProvider, DefaultLocalUserProfileDirectoryPathProvider>()
+                //.AddSingleton<IOrganizationsStringlyTypedPathOperator, DefaultOrganizationsStringlyTypedPathOperator>()
+                //.AddSingleton<IOrganizationDirectoryNameProvider, DefaultOrganizationDirectoryNameProvider>()
 
 
                 .BuildServiceProvider()
